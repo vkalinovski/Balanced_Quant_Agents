@@ -1,0 +1,49 @@
+{
+  "status": "completed",
+  "method": "balanced validation objective; no paper-metric calibration",
+  "validation_period": [
+    "2018-01-01",
+    "2020-12-31"
+  ],
+  "locked_holdout_period": [
+    "2021-01-01",
+    "2023-12-31"
+  ],
+  "transaction_cost_one_way": 0.001,
+  "signal": {
+    "lookback": 120,
+    "skip": 0,
+    "top_n": 8,
+    "inverse_vol": false
+  },
+  "risk": {
+    "target_vol": 0.32,
+    "max_gross": 1.25,
+    "risk_off_multiplier": 1.0,
+    "soft_drawdown": -0.1,
+    "hard_drawdown": -0.2,
+    "soft_multiplier": 0.85,
+    "hard_multiplier": 0.65
+  },
+  "selection_score": 1.1405813887049643,
+  "holdout_result": {
+    "Total Return": 0.8421623020613251,
+    "ARR": 0.2268599552353019,
+    "Annual Volatility": 0.259785623046518,
+    "Sharpe": 0.9170844412376657,
+    "Sortino": 1.3402995459211189,
+    "Max Drawdown": 0.3519550074357394,
+    "Calmar": 0.6445708981047028
+  },
+  "data_sha256": {
+    "nasdaq30_2010_2023.csv": "9f167d84bc9084b15b335c872ff2191b3dd7363215117a641a0754ed0b991cf7",
+    "market_factors.csv": "ba789c58e5435b8fee60c9032977bd045baead90883b9f8111befe8d46751d7d"
+  },
+  "python": "3.13.0",
+  "runtime_seconds": 11.15,
+  "limitations": [
+    "Fixed equity universe may contain survivorship bias.",
+    "No market-impact or borrow model beyond turnover costs.",
+    "A three-year holdout is informative but not definitive."
+  ]
+}

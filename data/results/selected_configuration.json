@@ -1,0 +1,17 @@
+{
+  "signal": {
+    "lookback": 120,
+    "skip": 0,
+    "top_n": 8,
+    "inverse_vol": false
+  },
+  "risk": {
+    "target_vol": 0.32,
+    "max_gross": 1.25,
+    "risk_off_multiplier": 1.0,
+    "soft_drawdown": -0.1,
+    "hard_drawdown": -0.2,
+    "soft_multiplier": 0.85,
+    "hard_multiplier": 0.65
+  }
+}
