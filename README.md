@@ -17,7 +17,7 @@ locked 2021-2023 holdout. Returns include a 10 bps one-way turnover cost.
 | Equal Weight 30 | 64.85% | 18.21% | 0.846 | 30.79% | 22.88% |
 | QQQ benchmark | 33.04% | 10.02% | 0.521 | 35.12% | 23.76% |
 
-![Holdout equity curves](figures/equity_curves.png)
+![Holdout equity curves](data/figures/equity_curves.png)
 
 ## What makes the test honest
 
@@ -43,47 +43,7 @@ context only. They are not treated as a target because the available data,
 universe, execution assumptions, and agent architecture do not fully match the
 paper.
 
-## Repository layout
 
-```text
-ISSUE_4/
-├── README.md
-├── LICENSE
-├── requirements.txt
-├── paper_3.pdf                  # local reference; intentionally gitignored
-├── data/                       # frozen input snapshots and provenance note
-├── notebooks/
-│   └── QuantAgents_balanced.ipynb
-├── src/
-│   ├── balanced_quantagents.py # signal, risk, metrics, validation search
-│   └── experiment.py           # complete run and artifact export
-├── scripts/
-│   ├── run_experiment.py
-│   └── build_notebook.py
-├── tests/                      # causal and portfolio invariant checks
-├── results/                    # CSV/JSON audit trail
-├── figures/                    # publication-ready charts
-└── docs/GITHUB_SETUP.md        # exact publishing commands
-```
-
-## Reproduce
-
-Python 3.11 or newer is recommended.
-
-```bash
-cd ISSUE_4
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
-python scripts/run_experiment.py
-jupyter nbconvert --to notebook --execute notebooks/QuantAgents_balanced.ipynb \
-  --output QuantAgents_balanced.ipynb --output-dir notebooks \
-  --ExecutePreprocessor.timeout=600
-```
-
-The checked-in notebook is already executed from count `1`. The command above
-recreates every table, chart, and result file.
 
 ## Main artifacts
 
@@ -94,9 +54,4 @@ recreates every table, chart, and result file.
 - `results/run_manifest.json`: exact configuration, data hashes, runtime, and limitations.
 - `figures/drawdown_and_exposure.png`: drawdown and leverage behavior.
 
-## Limitations
 
-The fixed stock universe can create survivorship bias. The cost model does not
-include nonlinear market impact, tax, or broker-specific financing. A
-three-year holdout contains a difficult 2022 regime but remains too short to
-establish live robustness. This project is research code, not investment advice.
