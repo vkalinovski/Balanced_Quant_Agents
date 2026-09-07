@@ -21,14 +21,14 @@ locked 2021-2023 holdout. Returns include a 10 bps one-way turnover cost.
 
 ## What makes the test honest
 
-- Signal and risk choices are selected only from observations dated 2020 or earlier.
-- The balanced score rewards Sharpe, Calmar, rolling-window stability, and lower turnover.
-- Validation constraints cap drawdown and volatility instead of targeting paper returns.
-- All positions are delayed by one trading day after signal formation.
-- Volatility and drawdown controls use lagged data only.
-- Gross exposure has a hard 1.25x cap in the selected model.
-- Results include explicit turnover costs and retain losing years.
-- Input files are frozen and recorded with SHA-256 hashes in the run manifest.
+- Signal and risk choices are selected only from observations dated 2020 or earlier
+- The balanced score rewards Sharpe, Calmar, rolling-window stability, and lower turnover
+- Validation constraints cap drawdown and volatility instead of targeting paper returns
+- All positions are delayed by one trading day after signal formation
+- Volatility and drawdown controls use lagged data only
+- Gross exposure has a hard 1.25x cap in the selected model
+- Results include explicit turnover costs and retain losing years
+- Input files are frozen and recorded with SHA-256 hashes in the run manifest
 
 ## Strategy
 
@@ -47,11 +47,11 @@ paper.
 
 ## Main artifacts
 
-- `results/performance_comparison.csv`: holdout metrics versus baselines.
-- `results/validation_leaderboard.csv`: every validation candidate that passed constraints.
-- `results/daily_positions.csv`: auditable holdout allocations.
-- `results/daily_diagnostics.csv`: exposure, turnover, costs, and control states.
-- `results/run_manifest.json`: exact configuration, data hashes, runtime, and limitations.
-- `figures/drawdown_and_exposure.png`: drawdown and leverage behavior.
+- `results/performance_comparison.csv`: holdout metrics versus baselines
+- `results/validation_leaderboard.csv`: every validation candidate that passed constraints
+- `results/daily_positions.csv`: auditable holdout allocations
+- `results/daily_diagnostics.csv`: exposure, turnover, costs, and control states
+- `results/run_manifest.json`: exact configuration, data hashes, runtime, and limitations
+- `figures/drawdown_and_exposure.png`: drawdown and leverage behavior
 
 
